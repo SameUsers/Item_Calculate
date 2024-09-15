@@ -29,6 +29,7 @@ header {
     justify-content: left;
     background-color: #2c2c2e;
     border-bottom: 2px solid #ffd700;
+    flex-wrap: wrap; /* Flex-wrap для адаптации */
 }
 
 .navbar li {
@@ -68,10 +69,6 @@ main {
 }
 
 form {
-    margin-bottom: 20px;
-}
-
-.form-container {
     margin-bottom: 20px;
 }
 
@@ -133,16 +130,88 @@ p {
 
 button:hover {
     background-color: #e5c100;
-}/* Удаление стрелок у полей input[type="number"] */
+}
+
+/* Удаление стрелок у полей input[type="number"] */
 input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
     -webkit-appearance: none; /* Chrome, Safari, Edge */
     appearance: none; /* Стандартное свойство */
 }
 
-/* Удаление стрелок у полей input[type="number"] в Safari и старых версиях Chrome */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    main {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .navbar {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: 20px;
+        margin-top: 10px;
+        width: 95%;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }
